@@ -19,11 +19,6 @@ def is_isogram(string):
 			count += 1
 	return True if count == 0 else False
 
-print(is_isogram("booba"))
-print(is_isogram("qwerty"))
-print(is_isogram("blackbro"))
-print(is_isogram("b"))
-print(is_isogram("BoOb"))
 
 '''
 This was the top solution lol, i wish to think like this some day
