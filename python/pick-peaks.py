@@ -18,16 +18,16 @@ Have fun!
 '''
 
 def pick_peaks(arr):
-    pos = []
-    peak = []
+    peak, pos = [], []
+    result = { "peaks":[], "pos":[] }
     
-    for i in range(len(arr)):
-        # Skipping over the first and last index
-        if i == 0 or i >= len(arr)-1:
-            continue
+    for i in range(1, len(arr)) :
+        if arr[i]>arr[i-1] :
+            peak, pos = [arr[i]], [i]
         
-        if arr[i] > arr[i-1] and arr[i] >= arr[i+1]:
-            pos.append(i)
-            peak.append(arr[i])
+        elif arr[i]<arr[i-1] :
+            result["peaks"] += peak
+            result["pos"] += pos
+            peak, pos = [], []
     
-    return {"pos": pos, "peaks": peak}
+    return result
